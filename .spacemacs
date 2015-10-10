@@ -25,6 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      c-c++
      emacs-lisp
+     ess
      extra-langs
      git
      ipython-notebook
