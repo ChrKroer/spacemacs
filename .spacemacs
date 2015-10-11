@@ -88,11 +88,7 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
                          spacemacs-light
-                         solarized-light
-                         solarized-dark
-                         leuven
-                         monokai
-                         zenburn)
+                         )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -205,12 +201,18 @@ user code."
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
-layers configuration. You ;; Make evil-mode up/down operate in screen lines instead of logical lines
+layers configuration. You are free to put any user code."
+  ;; Make evil-mode up/down operate in screen lines instead of logical lines
 (define-key evil-motion-state-map "j" 'evil-next-visual-line)
 (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
 ;; Also in visual mode
 (define-key evil-visual-state-map "j" 'evil-next-visual-line)
-(define-key evil-visual-state-map "k" 'evil-previous-visual-line)are free to put any user code."
+(define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+;; (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+;; (define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+;; (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+;; (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+;; (define-key evil-motion-state-map (kbd "<remap> <evil-end-of-line>") 'evil-end-of-visual-line)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
