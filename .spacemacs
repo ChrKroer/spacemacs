@@ -33,7 +33,9 @@ values."
      git
      ipython-notebook
      java
-     latex
+     (latex :variables
+            latex-enable-auto-fill nil
+            )
      ;; markdown
      org
      python
@@ -41,7 +43,8 @@ values."
             shell-default-shell 'term
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-term-shell "/bin/bash")
+            shell-default-term-shell "/bin/bash"
+            )
      ;; spell-checking
      ;; syntax-checking
      scala
@@ -156,7 +159,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -214,11 +217,10 @@ layers configuration. You are free to put any user code."
 ;; Also in visual mode
 (define-key evil-visual-state-map "j" 'evil-next-visual-line)
 (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
-;; (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-;; (define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
-;; (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-;; (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
-;; (define-key evil-motion-state-map (kbd "<remap> <evil-end-of-line>") 'evil-end-of-visual-line)
+;; (define-key evil-visual-state-map "$" 'evil-end-of-visual-line)
+;; (define-key evil-visual-state-map "0" 'evil-beginning-of-visual-line)
+(setq eclim-eclipse-dirs '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse"
+      eclim-executable '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse/eclim")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
