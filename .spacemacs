@@ -50,6 +50,7 @@ values."
      scala
      semantic
      sql
+     syntax-checking
      themes-megapack
      ;; version-control
      )
@@ -212,6 +213,7 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
+  ;; Show 80-column marker
 (define-key evil-motion-state-map "j" 'evil-next-visual-line)
 (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
 ;; Also in visual mode
@@ -222,6 +224,9 @@ layers configuration. You are free to put any user code."
 (setq eclim-eclipse-dirs '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse"
       eclim-executable '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse/eclim")
 )
+
+;; flake 8 setup
+(setq-default flycheck-python-flake8-executable "/Users/chrkroer/anaconda/bin/flake8")
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
