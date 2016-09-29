@@ -36,7 +36,7 @@ values."
      (latex :variables
             latex-enable-auto-fill nil
             )
-     ;; markdown
+     markdown
      org
      python
      (shell :variables
@@ -226,7 +226,7 @@ layers configuration. You are free to put any user code."
 )
 
 ;; flake 8 setup
-(setq-default flycheck-python-flake8-executable "/Users/chrkroer/anaconda/bin/flake8")
+(setq-default flycheck-python-flake8-executable "/Users/ckroer/anaconda/bin/flake8")
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
