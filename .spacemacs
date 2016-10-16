@@ -46,7 +46,6 @@ values."
             shell-default-term-shell "/bin/bash"
             )
      ;; spell-checking
-     ;; syntax-checking
      scala
      semantic
      sql
@@ -221,12 +220,12 @@ layers configuration. You are free to put any user code."
 (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
 ;; (define-key evil-visual-state-map "$" 'evil-end-of-visual-line)
 ;; (define-key evil-visual-state-map "0" 'evil-beginning-of-visual-line)
-(setq eclim-eclipse-dirs '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse"
-      eclim-executable '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse/eclim")
+;; (setq eclim-eclipse-dirs '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse"
+;;       eclim-executable '"/Users/ckroer/install/eclipse/eclim/Eclipse.app/Contents/Eclipse/eclim")
 )
 
 ;; flake 8 setup
-(setq-default flycheck-python-flake8-executable "/Users/ckroer/anaconda/bin/flake8")
+(setq-default flycheck-python-flake8-executable "/Users/ckroer/anaconda/lib/python2.7/site-packages/flake8")
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -237,7 +236,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (stickyfunc-enhance srefactor shell-pop multi-term eshell-prompt-extras esh-help clang-format window-numbering volatile-highlights vi-tilde-fringe spray smooth-scrolling rainbow-delimiters powerline popwin popup pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-descbinds helm-ag helm google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move auto-highlight-symbol auto-dictionary aggressive-indent adaptive-wrap ace-window ace-link evil-leader evil which-key quelpa package-build use-package bind-key s dash spacemacs-theme)))
+    (auctex-latexmk stickyfunc-enhance srefactor shell-pop multi-term eshell-prompt-extras esh-help clang-format window-numbering volatile-highlights vi-tilde-fringe spray smooth-scrolling rainbow-delimiters powerline popwin popup pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-descbinds helm-ag helm google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move auto-highlight-symbol auto-dictionary aggressive-indent adaptive-wrap ace-window ace-link evil-leader evil which-key quelpa package-build use-package bind-key s dash spacemacs-theme)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/Users/ckroer/Documents/research/equilibrium_computation/mirror_prox/libdub/include" "/Users/ckroer/Documents/research/equilibrium_computation/mirror_prox/libdub/math/include")))))
