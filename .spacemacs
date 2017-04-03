@@ -228,12 +228,25 @@ layers configuration. You are free to put any user code."
 ;; Also in visual mode
 (define-key evil-visual-state-map "j" 'evil-next-visual-line)
 (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+;;;;;;;;;;;;;;;
+;; C++ setup ;;
+;;;;;;;;;;;;;;;
 ;; Bind clang-format-region to C-M-tab in all modes:
 (global-set-key [C-M-tab] 'clang-format-region)
 ;; Bind clang-format-buffer to tab on the c++-mode only:
 (add-hook 'c++-mode-hook 'clang-format-bindings)
 (defun clang-format-bindings ()
   (define-key c++-mode-map [tab] 'clang-format-buffer))
+;; This snippet allows you to run clang-format before saving
+;; given the current file as the correct filetype.
+;; This relies on the c-c++ layer being enabled.
+(defun clang-format-for-filetype ()
+  "Run clang-format if the current file has a file extensions
+in the filetypes list."
+  (let ((filetypes '("c" "cpp")))
+    (when (member (file-name-extension (buffer-file-name)) filetypes)
+      (clang-format-buffer))))
+(add-hook 'before-save-hook 'clang-format-for-filetype)
 )
 (setq-default
  ;; js2-mode
