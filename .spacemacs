@@ -26,6 +26,7 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                         auto-completion-enable-snippets-in-popup t)
+     bibtex
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
@@ -40,6 +41,7 @@ values."
             TeX-master nil
             TeX-parse-self t
             TeX-auto-save t
+            latex-enable-folding t
             ;; latex-enable-auto-fill nil
             )
      markdown
@@ -289,7 +291,7 @@ in the filetypes list."
  '(LaTeX-command "latex -synctex=1")
  '(package-selected-packages
    (quote
-    (gscholar-bibtex yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org thrift tagedit stickyfunc-enhance stan-mode srefactor sql-indent spaceline slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters qml-mode pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox org-projectile org-present org-pomodoro org-download org-bullets open-junk-file noflet neotree multi-term move-text mmm-mode matlab-mode markdown-toc macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint julia-mode json-mode js2-refactor js-doc info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-clang-tidy flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein dumb-jump disaster define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core wolfram-mode gscholar-bibtex yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org thrift tagedit stickyfunc-enhance stan-mode srefactor sql-indent spaceline slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters qml-mode pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox org-projectile org-present org-pomodoro org-download org-bullets open-junk-file noflet neotree multi-term move-text mmm-mode matlab-mode markdown-toc macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint julia-mode json-mode js2-refactor js-doc info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-clang-tidy flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein dumb-jump disaster define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
