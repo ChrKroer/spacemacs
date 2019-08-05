@@ -235,7 +235,7 @@ layers configuration. You are free to put any user code."
      (define-key reftex-mode-map (kbd "C-c r")
        (lambda ()
          (interactive)
-         (let ((reftex-refstyle "\\Cref"))
+         (let ((reftex-refstyle "\\ref"))
            (reftex-reference " "))))))
 ;;;;;;;;;;;;;;;
 ;; C++ setup ;;
