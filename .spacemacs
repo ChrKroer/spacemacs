@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     rust
      javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -26,7 +27,9 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                         auto-completion-enable-snippets-in-popup t)
-     bibtex
+     (bibtex :variables
+             org-ref-default-bibliography '("~/git-work/latex-bibliography/refs.bib")
+             )
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode
@@ -44,7 +47,9 @@ values."
             latex-enable-folding t
             ;; latex-enable-auto-fill nil
             )
-     markdown
+     (markdown :variables
+               markdown-enable-math t
+      )
      org
      python
      (shell :variables
@@ -53,8 +58,6 @@ values."
             shell-default-position 'bottom
             shell-default-term-shell "/bin/bash"
             )
-     ;; spell-checking
-     scala
      semantic
      sql
      spell-checking
@@ -105,7 +108,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         spacemacs-light
+                         spacemacs-dark
                          )
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -287,6 +290,7 @@ in the filetypes list."
 (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
 (setq TeX-view-program-list
       '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+(setq latex-enable-auto-fill nil)
 ;; flake 8 setup
 (setq-default flycheck-python-flake8-executable "/Users/ckroer/anaconda/bin/flake8")
 ;; (setq-default flycheck-clang-tidy-executable "/usr/local/opt/llvm/bin/clang-tidy")
@@ -300,11 +304,12 @@ in the filetypes list."
  ;; If there is more than one, they won't work right.
  '(LaTeX-command "latex -synctex=1")
  '(package-selected-packages
-   (quote
-    (org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core wolfram-mode gscholar-bibtex yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org thrift tagedit stickyfunc-enhance stan-mode srefactor sql-indent spaceline slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters qml-mode pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox org-projectile org-present org-pomodoro org-download org-bullets open-junk-file noflet neotree multi-term move-text mmm-mode matlab-mode markdown-toc macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint julia-mode json-mode js2-refactor js-doc info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-clang-tidy flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav ein dumb-jump disaster define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+   '(toml-mode racer flycheck-rust cargo rust-mode powerline scala-mode sbt-mode org-category-capture alert log4e gntp org-plus-contrib org-mime markdown-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode hydra lv dash-functional parent-mode projectile bibtex-completion haml-mode flyspell-correct pos-tip flycheck pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree polymode deferred request anaphora websocket diminish web-completion-data eclim company bind-map bind-key yasnippet packed auctex spinner anaconda-mode pythonic f dash s helm avy helm-core async auto-complete popup org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core wolfram-mode gscholar-bibtex yapfify xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toc-org thrift tagedit stickyfunc-enhance stan-mode srefactor sql-indent spaceline slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters qml-mode pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox org-projectile org-present org-pomodoro org-download org-bullets open-junk-file noflet neotree multi-term move-text mmm-mode matlab-mode markdown-toc macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint julia-mode json-mode js2-refactor js-doc info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gnuplot gh-md fuzzy flyspell-correct-helm flycheck-pos-tip flycheck-clang-tidy flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode ein dumb-jump disaster define-word dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq latex-enable-auto-fill nil)
